@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Smart Study",
+  "version": "1.0",
+  "description": "Uma extensão do Chrome para ajudar no estudo.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "Smart_study.jpg",
+      "48": "Smart_study.jpg",
+      "128": "Smart_study.jpg"
+    }
+  },
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content.js"]
+    }
+  ]
+}
+  
